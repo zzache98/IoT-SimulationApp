@@ -78,6 +78,15 @@ namespace SmartApp.MVVM.ViewModels
             }
         }
 
+        public int CurrentHumidity
+        {
+            get => _currentHumidity;
+            set
+            {
+                _currentHumidity = value;
+                OnPropertyChanged();
+            }
+        }
         private string? _currentTemperature;
         public string CurrentTemperature
         {
@@ -101,6 +110,8 @@ namespace SmartApp.MVVM.ViewModels
         }
 
         private string? _currentDate;
+        private int _currentHumidity;
+
         public string CurrentDate
         {
             get => _currentDate!;
@@ -135,6 +146,7 @@ namespace SmartApp.MVVM.ViewModels
             var weather = await _weatherService.GetWeatherDataAsync();
             CurrentTemperature = weather.Temperature.ToString();
             CurrentWeatherCondition = weather.WeatherCondition ?? "";
+            CurrentHumidity = weather.Humidity;
         }
 
         private async Task PopulateDeviceItemsAsync()

@@ -33,6 +33,10 @@
                         <Run Text="{Binding CurrentTemperature}" FontSize="32" />
                         <Run Text="°C" />
                         </TextBlock>
+                        <TextBlock Margin="5 0 0 0" FontSize="22" Foreground="LightGray" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Run Text="Humidity " FontSize="32"/>
+                        <Run Text="{Binding CurrentHumidity}" FontSize="32" />
+                        </TextBlock>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 -15 0 0">
